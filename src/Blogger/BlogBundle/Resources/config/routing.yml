@@ -1,0 +1,84 @@
+BloggerBlogBundle_homepage:
+    path:     /
+    defaults: { _controller: "BloggerBlogBundle:Page:index" }
+    requirements:
+         methods:  GET
+BloggerBlogBundle_about:
+    path:   /about
+    defaults: { _controller: "BloggerBlogBundle:Page:about" }
+    requirements:
+         methods:  GET
+BloggerBlogBundle_blog_show:
+    path:   /{id}
+    defaults: { _controller: "BloggerBlogBundle:Blog:show" }
+    requirements:
+        methods:  GET
+        id: \d+
+BloggerBlogBundle_allcategoryes:
+    path:    /{id}
+    defaults: { _controller: "BloggerBlogBundle:Category:index" }
+    requirements:
+        methods:  GET
+BloggerBlogBundle_categoryedit:
+    path:     edit/category/{id}
+    defaults: { _controller: "BloggerBlogBundle:Category:categoryedit" }
+    requirements:
+         methods:  GET
+BloggerBlogBundle_blogedit:
+    path:    edit/blog/{id}
+    defaults: { _controller: "BloggerBlogBundle:Blog:blogedit" }
+    requirements:
+         methods:  GET
+BloggerBlogBundle_allblogs:
+    path:     category/{id}
+    defaults: { _controller: "BloggerBlogBundle:Category:categoryshow" }
+    requirements:
+         methods:  GET
+         id: \d+
+BloggerBlogBundle_comment_create:
+    path:  /comment/{blog_id}
+    defaults: { _controller: "BloggerBlogBundle:Comment:create", format: json }
+    requirements:
+        methods:  POST
+        blog_id: \d+
+BloggerBlogBundle_categcommentcreate:
+    path:  categcomment/{category_id}
+    defaults: { _controller: "BloggerBlogBundle:CategComment:create", format: json }
+    requirements:
+        methods:  POST
+        category_id: \d+
+BloggerBlogBundle_blog_create:
+    path:   /blog/{category_id}
+    defaults: { _controller: "BloggerBlogBundle:Blog:create" }
+    requirements:
+        methods:  POST
+        category_id: \d+
+BloggerBlogBundle_category_create:
+    path:   /category/
+    defaults: { _controller: "BloggerBlogBundle:Category:create" }
+    requirements:
+        methods:  POST
+BloggerBlogBundle_category_update:
+    path:   update/category/{id}
+    defaults: { _controller: "BloggerBlogBundle:Category:update" }
+    requirements:
+        methods:  POST
+BloggerBlogBundle_category_delete:
+    path:   delete/category/{id}
+    defaults: { _controller: "BloggerBlogBundle:Category:delete" }
+    requirements:
+        methods:  GET
+BloggerBlogBundle_blog_delete:
+    path:   delete/blog/{id}
+    defaults: { _controller: "BloggerBlogBundle:Blog:delete" }
+    requirements:
+        methods:  GET
+BloggerBlogBundle_blog_update:
+    path:   update/blog/{id}
+    defaults: { _controller: "BloggerBlogBundle:Blog:update" }
+    requirements:
+        methods:  POST
+ 
+
+
+

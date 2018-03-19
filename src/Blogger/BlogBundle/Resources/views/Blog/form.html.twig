@@ -1,0 +1,6 @@
+{# src/Blogger/BlogBundle/Resources/views/Blog/form.html.twig #}
+{{ form_start(form, { 'action': path('BloggerBlogBundle_blog_create' , { 'category_id' : blog.category.id }), 'method': 'POST', 'attr': {'class': 'blogger'} }) }}
+    {{ form_widget(form) }}
+<p>
+    <input type="submit" value="Submit">
+</p>

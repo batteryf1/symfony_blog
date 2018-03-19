@@ -1,0 +1,6 @@
+{# src/Blogger/BlogBundle/Resources/views/Category/form.html.twig #}
+{{ form_start(form, { 'action': path('BloggerBlogBundle_category_create'), 'method': 'POST', 'attr': {'class': 'blogger'} }) }}
+    {{ form_widget(form) }}
+<p>
+    <input type="submit" value="Add new Category">
+</p>

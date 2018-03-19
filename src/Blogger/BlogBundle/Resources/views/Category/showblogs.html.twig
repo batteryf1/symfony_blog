@@ -1,0 +1,23 @@
+{# src/Blogger/BlogBundle/Resources/views/Category/showblogs.html.twig #}
+
+    {% for blog in blogs %}
+        <article class="">
+
+            <header>
+                <h2><a href="{{ path('BloggerBlogBundle_blog_show', { 'id': blog.id }) }}">{{ blog.name }}</a></h2>
+            </header>
+
+            <div class="">
+                <p>{{ blog.content(500) }}</p>
+                <p class="continue"><a href="{{ path('BloggerBlogBundle_blog_show', { 'id': blog.id }) }}">Continue reading...</a></p>
+                <p class="continue"><a href="{{ path('BloggerBlogBundle_blogedit', { 'id': blog.id }) }}">Edit...</a></p>
+            </div>
+
+        </article>
+    {% else %}
+        <p>There are no blog entries for this category</p>
+    {% endfor %}
+    <section class="previous-comments">
+        <h3>Add Blog</h3>
+        {{ render(controller('BloggerBlogBundle:Blog:new',{ 'category_id': category.id })) }}
+    </section>

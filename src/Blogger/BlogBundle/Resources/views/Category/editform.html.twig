@@ -1,0 +1,9 @@
+{{ form_start(form, { 'action': path('BloggerBlogBundle_category_update', { 'id': category.id }), 'method': 'POST', 'attr': {'class': 'blogger'} }) }}
+    {{ form_widget(form) }}
+<p>
+    <input type="submit" value="Edit Category">
+</p>
+
+{% if category.blogs  is  empty %}
+    <p class="continue"><a href="{{ path('BloggerBlogBundle_category_delete', { 'id': category.id }) }}">Delete...</a></p>
+{% endif %}

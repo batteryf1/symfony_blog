@@ -1,0 +1,24 @@
+{# src/Blogger/BlogBundle/Resouces/views/Category/show.html.twig #}
+{% extends 'BloggerBlogBundle:Page:layout.html.twig' %}
+
+{% block name %}{{ category.name }}{% endblock %}
+
+{% block body %}
+    <article class="blog">
+        <header>
+            <h2>{{ category.name }}</h2>
+        </header>
+
+        <div>
+            <p>{{ category.description }}</p>
+        </div>
+    </article>
+
+    <section class="blog">
+        <section class="blog">
+            <p>Edit category:</p>
+            {% include 'BloggerBlogBundle:Category:editform.html.twig' with { 'form': form } %}
+        </section>
+    </section>
+
+{% endblock %}

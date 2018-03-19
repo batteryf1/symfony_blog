@@ -1,0 +1,22 @@
+{# src/Blogger/BlogBundle/Resouces/views/Blog/show.html.twig #}
+{% extends 'BloggerBlogBundle:Page:layout.html.twig' %}
+
+{% block name %}{{ blog.name }}{% endblock %}
+{% block body %}
+    <article class="blog">
+        <header>
+            <h2>{{ blog.name }}</h2>
+        </header>
+        <div>
+            <p>{{ blog.content }}</p>
+        </div>
+    </article>
+    <section class="comments" id="comments">
+        <h3>Comments:</h3>
+        {% include 'BloggerBlogBundle:Comment:index.html.twig' with { 'comments': comments  } %}
+        <section class="previous-comments">
+            <h3>Add Comment</h3>
+            {{ render(controller('BloggerBlogBundle:Comment:new',{ 'blog_id': blog.id })) }}
+        </section>
+    </section>
+{% endblock %}

@@ -1,0 +1,13 @@
+{# src/Blogger/BlogBundle/Resources/views/Comment/index.html.twig #}
+
+{% for comment in comments %}
+    <article class="comment {{ cycle(['odd', 'even'], loop.index0) }}" id="comment-{{ comment.id }}">
+        <header>
+            <p><span class="highlight">{{ comment.author }}</span> commented <time datetime="{{ comment.createat|date('c') }}">{{ comment.createat|date('l, F j, Y') }}</time></p>
+        </header>
+        <p>{{ comment.content }}</p>
+    </article>
+{% else %}
+    <p>There are no comments for this category. Be the first to comment...</p>
+{% endfor %}
+

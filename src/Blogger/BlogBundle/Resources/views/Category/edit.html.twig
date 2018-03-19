@@ -1,0 +1,8 @@
+{% extends 'BloggerBlogBundle:Page:layout.html.twig' %}
+
+{% block title %}Edit category{% endblock%}
+
+{% block body %}
+    <h1>Edit Category: " {{category.name}} "</h1>
+    {% include 'BloggerBlogBundle:Category:editform.html.twig' with { 'form': form } %}
+{% endblock %}

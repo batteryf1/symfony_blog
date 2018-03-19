@@ -1,0 +1,38 @@
+{# src/Blogger/BlogBundle/Resouces/views/Category/show.html.twig #}
+{% extends 'BloggerBlogBundle:Page:layout.html.twig' %}
+
+{% block name %}{{ category.name }}{% endblock %}
+
+{% block body %}
+    <article class="blog">
+        <header>
+            <h2>{{ category.name }}</h2>
+        </header>
+
+        <div>
+            <p>{{ category.description }}</p>
+        </div>
+
+    </article>
+
+    <section class="blog">
+        <section class="blog">
+            <p>Blogs fot this category:</p>
+            {#% include 'BloggerBlogBundle:Category:showblogs.html.twig' with { 'blogs': blogs } %#}
+        </section>
+    </section>
+
+{% endblock %}
+
+
+{% block sidebar %}
+    <h2>CategComments:</h2>
+    <section class="comments" id="comments">
+        <h3>Comments:</h3>
+        {% include 'BloggerBlogBundle:CategComment:index.html.twig' with { 'comments': comments  } %}
+        <section class="previous-comments">
+            <h3>Add Comment</h3>
+            {{ render(controller('BloggerBlogBundle:CategComment:new',{ 'category_id': category.id })) }}
+        </section>
+    </section>
+{% endblock %}
